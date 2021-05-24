@@ -71,61 +71,7 @@ class CFStream
         $filesize = filesize($filepath);
         $filename = basename($filepath);
 
-        $response = $this->post($filename, $filesize);
-        $resourceUrl = $response->getHeader('Location')[0];
-        $this->patch($resourceUrl, $file, $filesize);
-
-        return $resourceUrl;
-    }
-
-    /**
-     * Create a resource on Cloudflare Stream.
-     *
-     * @param string $filename
-     * @param int    $filesize
-     *
-     * @return object $response Response from Cloudflare
-     */
-    public function post($filename, $filesize)
-    {
-        if (empty($filename) || empty($filesize)) {
-            throw new InvalidFileException();
-        }
-
-        $response = $this->client->post("https://api.cloudflare.com/client/v4/zones/{$this->zone}/media", [
-            'headers' => [
-                'X-Auth-Key' => $this->key,
-                'X-Auth-Email' => $this->email,
-                'Content-Length' => 0,
-                'Tus-Resumable' => '1.0.0',
-                'Upload-Length' => $filesize,
-                'Upload-Metadata' => "filename {$filename}",
-            ],
-        ]);
-
-        if (201 != $response->getStatusCode()) {
-            throw new OperationFailedException();
-        }
-
-        return $response;
-    }
-
-    /**
-     * Upload the file to Cloudflare Stream.
-     *
-     * @param string   $resourceUrl
-     * @param resource $file        fopen() pointer resource
-     * @param int      $filesize
-     *
-     * @return object $response Response from Cloudflare
-     */
-    public function patch($resourceUrl, $file, $filesize)
-    {
-        if (empty($file)) {
-            throw new InvalidFileException();
-        }
-
-        $response = $this->client->patch($resourceUrl, [
+        $response = $this->client->patch("https://api.cloudflare.com/client/v4/accounts/{$this->zone}/stream/copy", [
             'headers' => [
                 'X-Auth-Key' => $this->key,
                 'X-Auth-Email' => $this->email,
@@ -143,6 +89,7 @@ class CFStream
 
         return $response;
     }
+
 
     /**
      * Delete video from Cloudflare Stream.
