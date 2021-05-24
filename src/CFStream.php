@@ -71,7 +71,7 @@ class CFStream
         $filesize = filesize($filepath);
         $filename = basename($filepath);
 
-        $response = $this->client->patch("https://api.cloudflare.com/client/v4/accounts/{$this->zone}/stream/copy", [
+        $response = $this->client->post("https://api.cloudflare.com/client/v4/accounts/{$this->zone}/stream/copy", [
             'headers' => [
                 'X-Auth-Key' => $this->key,
                 'X-Auth-Email' => $this->email,
