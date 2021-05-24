@@ -1,12 +1,12 @@
 <?php
 
-namespace JianJye\CFStream;
+namespace Fishr01\CFStream;
 
 use GuzzleHttp\Client;
-use JianJye\CFStream\Exceptions\InvalidFileException;
-use JianJye\CFStream\Exceptions\InvalidOriginsException;
-use JianJye\CFStream\Exceptions\OperationFailedException;
-use JianJye\CFStream\Exceptions\InvalidCredentialsException;
+use Fishr01\CFStream\Exceptions\InvalidFileException;
+use Fishr01\CFStream\Exceptions\InvalidOriginsException;
+use Fishr01\CFStream\Exceptions\OperationFailedException;
+use Fishr01\CFStream\Exceptions\InvalidCredentialsException;
 
 class CFStream
 {
