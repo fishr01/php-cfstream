@@ -1,5 +1,5 @@
 {
-    "name": "jianjye/php-cfstream",
+    "name": "fishr01/php-cfstream",
     "description": "Upload and manage Cloudflare Stream easily",
     "require": {
         "php": ">=7.2",
@@ -12,13 +12,13 @@
             "email": "seejianjye@gmail.com"
         }
     ],
-    "homepage": "https://github.com/jianjye/php-cfstream",
+    "homepage": "https://github.com/fishr01/php-cfstream",
     "license": "MIT",
     "keywords": [
         "cfstream",
         "php-cfstream",
         "cloudflare stream",
-        "jianjye",
+        "fishr01",
         "tus"
     ],
     "autoload": {
@@ -29,7 +29,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JianJye\\CFStream\\Laravel\\ServiceProvider"
+                "Fishr01\\CFStream\\Laravel\\ServiceProvider"
             ]
         }
     }
