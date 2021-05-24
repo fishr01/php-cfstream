@@ -29,7 +29,7 @@ For Laravel 5.0 and newer projects, you can do `vendor:publish` to enable basic 
 php artisan vendor:publish 
 ```
 
-Then select `Provider: JianJye\CFStream\Laravel\ServiceProvider`. `cfstream.php` will be copied to your `config` folder.
+Then select `Provider: Fishr01\CFStream\Laravel\ServiceProvider`. `cfstream.php` will be copied to your `config` folder.
 
 After that, add these into your `.env` file:
 
@@ -46,7 +46,7 @@ CLOUDFLARE_EMAIL=
 If you are on composer-enabled projects, the following instructions should work for you. Otherwise try requiring `src/CFStream.php` directly in your project instead.
 
 ```
-use JianJye\CFStream\CFStream;
+use Fishr01\CFStream\CFStream;
 
 $cfstream = new CFStream($key, $zone, $email);
 
@@ -62,7 +62,7 @@ $cfstream->delete($resourceUrl);
 If you have done the `vendor:publish` step, then `CFStream` can grab your credentials from the config file. You can use the `CFStreamLaravel` client instead.
 
 ```
-use JianJye\CFStream\CFStreamLaravel;
+use Fishr01\CFStream\CFStreamLaravel;
 
 $cfstream = new CFStreamLaravel();
 
@@ -77,4 +77,4 @@ $cfstream->delete($resourceUrl);
 
 ### 2019-04-02 - Namespace Changed
 
-The namespace of this project has been updated from `JJSee` to `JianJye`. Please update your projects accordingly. 
+The namespace of this project has been updated from `JJSee` to `Fishr01`. Please update your projects accordingly. 

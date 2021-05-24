@@ -23,7 +23,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "JianJye\\CFStream\\": "src"
+            "Fishr01\\CFStream\\": "src"
         }
     },
     "extra": {

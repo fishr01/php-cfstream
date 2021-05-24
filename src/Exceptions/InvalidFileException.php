@@ -1,5 +1,5 @@
 <?php
 
-namespace JianJye\CFStream\Exceptions;
+namespace Fishr01\CFStream\Exceptions;
 
 class InvalidFileException extends \Exception {}
